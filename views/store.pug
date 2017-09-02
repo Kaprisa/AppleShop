@@ -1,0 +1,20 @@
+extends layout
+
+block content
+	main.store
+		h2.store__title.title= store.name
+		.grid-row.store__content
+			.grid-col_5.store__info
+				.store__address
+					strong Адрес:
+					= store.location.address
+					a.store__link(href=`/contacts/${store.slug}`) Посмотреть на карте
+				table.store__table
+					tr
+						td Пн. - Пт.
+						td #{store.businessHours[0].start} - #{store.businessHours[0].end}
+					tr
+						td Суб. - Вс.
+						td #{store.businessHours[1].start} - #{store.businessHours[1].end}
+			.grid-col_7
+				img.store__img(src=( store.photo ? `/uploads/${store.photo}` : "/images/default/city.jpg" ))

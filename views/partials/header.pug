@@ -1,0 +1,19 @@
+include ../mixins/_list
+
+header.header
+	.grid-row.header__top-line
+		include ../components/logo
+		include ../components/search
+		.grid-col_2.user__holder
+			include ../components/user
+		span.header__phone.phone.grid-col_2 + 7 (495) 99-99-99
+	.grid-row.header__bottom-line
+		nav.header__navigation.navigation.grid-col_9
+			ul.navigation__list
+				each type in types
+					li.navigation__item: a.navigation__link(href=`/catalog/${type._id}/page/1`)= type._id
+			//- let nav = [{'name': 'Mac', 'href': '/catalog/mac'},{'name': 'iPad', 'href': '/catalog/ipad' },{'name': 'iPhone', 'href': '/catalog/iphone' },{'name': 'Watch', 'href': '/catalog/watch' },{'name': 'TV', 'href': '/catalog/tv' },{'name': 'Music', 'href': '/catalog/music' }]
+			//+list('navigation', nav)
+		include ../components/user-goods
+
+

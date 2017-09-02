@@ -1,0 +1,9 @@
+ul.breadcrumbs
+	li.breadcrumbs__item
+		a(href="/")
+			include ../../public/images/icons/home.svg
+	//each item in breadcrumbs
+	li.breadcrumbs__item
+		a.breadcrumbs__link(href=`/catalog/${phone.type}/${phone.modelSlug}/page/1`)= phone.model
+	li.breadcrumbs__item
+		span.breadcrumbs__link= phone.name

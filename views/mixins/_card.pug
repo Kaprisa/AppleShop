@@ -1,0 +1,12 @@
+mixin card(card)
+	article.card(data-id=card._id)
+		a.card__link.card__img-holder(href=`/product/${card._id}`)
+			img.card__img(src=(`/uploads/${card.photo}` || '/images/products/iPhone6S/iphone6s-gold.png') alt="photo")
+		h3.card__title.title= card.name
+		span.card__price= card.price + ' руб.'
+		if user && user.role === 'admin'
+			a.btn(href=`/admin/product/edit/${card._id}/addToCard`) Редактировать
+			span.card__buy.buy-one-click Посмотреть товар
+		else
+			button.btn.add-to-card(type="button") Добавить в корзину
+			span.card__buy.buy-one-click Купить в один клик
