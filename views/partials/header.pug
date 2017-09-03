@@ -12,8 +12,6 @@ header.header
 			ul.navigation__list
 				each type in types
 					li.navigation__item: a.navigation__link(href=`/catalog/${type._id}/page/1`)= type._id
-			//- let nav = [{'name': 'Mac', 'href': '/catalog/mac'},{'name': 'iPad', 'href': '/catalog/ipad' },{'name': 'iPhone', 'href': '/catalog/iphone' },{'name': 'Watch', 'href': '/catalog/watch' },{'name': 'TV', 'href': '/catalog/tv' },{'name': 'Music', 'href': '/catalog/music' }]
-			//+list('navigation', nav)
 		include ../components/user-goods
 
 
